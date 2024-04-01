@@ -14,17 +14,37 @@
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <14 15>;
+            key-positions = <0 1>;
         };
 
         backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <20 21>;
+            key-positions = <8 9>;
         };
 
         delete {
             bindings = <&kp DELETE>;
             key-positions = <32 33>;
+        };
+
+        erase_word {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <7 8 9>;
+        };
+
+        delete_wordm {
+            bindings = <&kp LC(DELETE)>;
+            key-positions = <31 32 33>;
+        };
+
+        caps {
+            bindings = <&caps_word>;
+            key-positions = <17 18>;
+        };
+
+        togglemm_gamemm {
+            bindings = <&tog 5>;
+            key-positions = <0 11>;
         };
     };
 
@@ -39,14 +59,14 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp G        &kp J    &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp BSPC
-&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D        &kp H    &kp N  &kp E      &kp I    &kp O          &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp K    &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp ESC
+&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G        &kp J    &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp ESC
+&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D        &kp H    &kp N  &kp E      &kp I    &kp O          &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp K    &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &sl 3  &mo 2
             >;
         };
 
-        lower_layer {
+        numbers {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -54,14 +74,14 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp LS(N1)    &kp LS(N2)    &kp LS(N3)    &kp LS(N4)    &kp LS(N5)    &kp LS(N6)    &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &kp BSPC
-&bt BT_CLR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans        &trans        &trans      &trans      &trans      &trans      &trans
-                                        &kp LGUI      &trans        &kp SPACE     &kp RET       &trans      &trans
+&trans  &kp LS(N1)    &kp LS(N2)    &kp LS(N3)    &kp LS(N4)    &kp LS(N5)    &kp LS(N6)    &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7      &kp F10     &kp F11     &kp F12     &trans
+                                    &kp LGUI      &trans        &kp SPACE     &kp RET       &trans      &trans
             >;
         };
 
-        raise_layer {
+        symbols {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -69,10 +89,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp F1  &kp F2  &kp F3    &kp F4  &kp F5       &kp F6     &kp F7     &kp F8    &kp F11   &kp F12   &kp BSPC
-&kp LCTRL  &trans  &trans  &trans    &trans  &trans       &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans  &trans  &trans    &trans  &trans       &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                           &kp LGUI  &trans  &kp SPACE    &kp RET    &trans     &trans
+&trans  &trans  &trans  &trans    &trans  &trans       &trans             &trans     &kp LS(N9)  &kp LS(N0)  &trans    &trans
+&trans  &trans  &trans  &trans    &trans  &kp MINUS    &kp SINGLE_QUOTE   &kp EQUAL  &kp LBKT    &kp RBKT    &kp BSLH  &trans
+&trans  &trans  &trans  &trans    &trans  &kp UNDER    &kp DOUBLE_QUOTES  &kp PLUS   &kp LBRC    &kp RBRC    &kp PIPE  &trans
+                        &kp LGUI  &trans  &kp SPACE    &kp RET            &trans     &trans
             >;
         };
 
@@ -83,6 +103,33 @@
 &none   &trans     &trans            &trans         &trans          &trans    &trans  &trans  &trans  &trans  &trans  &trans
                                      &trans         &trans          &trans    &trans  &trans  &trans
             >;
+        };
+
+        functions {
+            bindings = <
+&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &sys_reset
+&trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                            &trans        &trans        &trans          &trans  &trans  &trans
+            >;
+        };
+
+        games {
+            bindings = <
+&trans  &kp Q  &kp W  &kp E      &kp R         &kp T     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A  &kp S  &kp D      &kp F         &kp G     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp C      &kp V         &kp B     &trans  &trans  &trans  &trans  &trans  &trans
+                      &kp LCTRL  &kp LEFT_ALT  &trans    &trans  &none   &none
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        functions {
+            if-layers = <1 2>;
+            then-layer = <4>;
         };
     };
 };
