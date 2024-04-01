@@ -59,10 +59,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G        &kp J    &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp ESC
-&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D        &kp H    &kp N  &kp E      &kp I    &kp O          &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp K    &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &sl 3  &mo 2
+&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G        &kp J                         &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp ESC
+&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D        &kp H                         &kp N  &kp E      &kp I    &kp O          &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp K                         &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
+                         &kp LGUI  &mo 1  &kp SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &sl 3  &mo 2
             >;
         };
 
@@ -89,10 +89,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &trans  &trans    &trans  &trans       &trans             &trans     &kp LS(N9)  &kp LS(N0)  &trans    &trans
-&trans  &trans  &trans  &trans    &trans  &kp MINUS    &kp SINGLE_QUOTE   &kp EQUAL  &kp LBKT    &kp RBKT    &kp BSLH  &trans
-&trans  &trans  &trans  &trans    &trans  &kp UNDER    &kp DOUBLE_QUOTES  &kp PLUS   &kp LBRC    &kp RBRC    &kp PIPE  &trans
-                        &kp LGUI  &trans  &kp SPACE    &kp RET            &trans     &trans
+&trans  &trans  &trans     &kp RIGHT_BRACE        &kp LEFT_BRACE        &trans       &trans             &kp PLUS        &trans         &trans    &trans     &trans
+&trans  &trans  &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp LEFT_PARENTHESIS  &kp MINUS    &kp SINGLE_QUOTE   &kp LEFT_ARROW  &kp UP_ARROW   &kp DOWN  &kp RIGHT  &trans
+&trans  &trans  &trans     &kp RIGHT_BRACKET      &kp LEFT_BRACKET      &kp UNDER    &kp DOUBLE_QUOTES  &kp PIPE        &kp BACKSLASH  &trans    &trans     &trans
+                           &kp LGUI               &trans                &kp SPACE    &kp RET            &trans          &trans
             >;
         };
 
@@ -107,19 +107,19 @@
 
         functions {
             bindings = <
-&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &sys_reset
-&trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                            &trans        &trans        &trans          &trans  &trans  &trans
+&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans          &kp K_PLAY_PAUSE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE  &trans  &sys_reset
+&trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp PAGE_UP       &kp PRINTSCREEN  &kp INSERT         &trans      &trans  &trans
+&trans          &trans        &trans        &trans        &trans        &trans          &kp PAGE_DOWN     &kp HOME         &kp END            &trans      &trans  &trans
+                                            &trans        &trans        &trans          &trans            &trans           &trans
             >;
         };
 
         games {
             bindings = <
-&trans  &kp Q  &kp W  &kp E      &kp R         &kp T     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A  &kp S  &kp D      &kp F         &kp G     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp C      &kp V         &kp B     &trans  &trans  &trans  &trans  &trans  &trans
-                      &kp LCTRL  &kp LEFT_ALT  &trans    &trans  &none   &none
+&trans  &kp Q  &kp W  &kp E      &kp R                 &kp T     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A  &kp S  &kp D      &kp F                 &kp G     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp C      &kp V                 &kp B     &trans  &trans  &trans  &trans  &trans  &trans
+                      &kp LCTRL  &kp LS(LC(LEFT_ALT))  &trans    &trans  &none   &none
             >;
         };
     };
