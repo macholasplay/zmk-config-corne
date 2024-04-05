@@ -59,10 +59,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G        &kp J                         &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp BACKSPACE
-&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D        &kp H                         &kp N  &kp E      &kp I    &kp O          &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp K                         &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
-                         &kp LGUI  &mo 1  &kp SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &sl 3  &mo 2
+&mt F4 ESC  &kp Q  &kp W  &kp F     &kp P  &kp G                 &kp J                         &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp BACKSPACE
+&kp LSHFT   &kp A  &kp R  &kp S     &kp T  &kp D                 &kp H                         &kp N  &kp E      &kp I    &kp O          &kp RIGHT_SHIFT
+&kp LCTRL   &kp Z  &kp X  &kp C     &kp V  &kp B                 &kp K                         &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
+                          &kp LGUI  &mo 1  &mt LEFT_ALT SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &sl 3  &mo 2
             >;
         };
 
@@ -116,10 +116,10 @@
 
         games {
             bindings = <
-&trans  &kp Q  &kp W  &kp E   &kp R                 &kp T     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A  &kp S  &kp D   &kp F                 &kp G     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp C   &kp V                 &kp B     &trans  &trans  &trans  &trans  &trans  &trans
-                      &trans  &kp LS(LC(LEFT_ALT))  &trans    &trans  &none   &none
+&kp ESC  &kp Q  &kp W  &kp E   &kp R                 &kp T        &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &kp A  &kp S  &kp D   &kp F                 &kp G        &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &kp Z  &kp X  &kp C   &kp V                 &kp B        &trans  &trans  &trans  &trans  &trans  &trans
+                       &trans  &kp LS(LC(LEFT_ALT))  &kp SPACE    &trans  &none   &none
             >;
         };
     };
