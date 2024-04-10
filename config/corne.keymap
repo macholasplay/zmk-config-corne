@@ -55,6 +55,19 @@
         };
     };
 
+    behaviors {
+        hold_tap_layer: hold_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_LAYER";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <40>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -66,10 +79,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G                 &kp J                         &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp BACKSPACE
-&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D                 &kp H                         &kp N  &kp E      &kp I    &kp O          &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B                 &kp K                         &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LEFT_ALT
-                         &kp LGUI  &mo 1  &mt LEFT_ALT SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &sl 3  &mo 2
+&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G                 &kp J                         &kp L                &kp U         &kp Y    &kp SEMICOLON  &kp BACKSPACE
+&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D                 &kp H                         &kp N                &kp E         &kp I    &kp O          &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B                 &kp K                         &kp M                &kp COMMA     &kp DOT  &kp FSLH       &kp LEFT_ALT
+                         &kp LGUI  &mo 1  &mt LEFT_ALT SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &hold_tap_layer 2 3  &kp LEFT_GUI
             >;
         };
 
@@ -123,10 +136,10 @@
 
         games {
             bindings = <
-&trans  &kp Q  &kp W  &kp E   &kp R         &kp T        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A  &kp S  &kp D   &kp F         &kp G        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp C   &kp V         &kp B        &trans  &trans  &trans  &trans  &trans  &trans
-                      &trans  &kp LEFT_ALT  &kp SPACE    &trans  &none   &none
+&trans  &kp Q  &kp W  &kp E   &kp R  &kp T        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A  &kp S  &kp D   &kp F  &kp G        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp C   &kp V  &kp B        &trans  &trans  &trans  &trans  &trans  &trans
+                      &trans  &mo 1  &kp SPACE    &trans  &none   &none
             >;
         };
     };
