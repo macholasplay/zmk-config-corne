@@ -46,7 +46,7 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <4 5>;
+            key-positions = <4 17>;
         };
 
         quit {
@@ -65,6 +65,36 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        space_tap: space_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPACE_TAP";
+            #binding-cells = <0>;
+            bindings = <&mt SPACE LEFT_ALT>, <&kp SPACE>;
+        };
+    };
+
+    macros {
+        single_quotes: single_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp SPACE>;
+            label = "SINGLE_QUOTES";
+        };
+
+        double_quotes: double_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp SPACE>;
+            label = "DOUBLE_QUOTES";
+        };
+
+        backtick: backtick {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp SPACE>;
+            label = "BACKTICK";
+        };
     };
 
     keymap {
@@ -78,10 +108,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G                 &kp J                         &kp L                &kp U         &kp Y    &kp SEMICOLON  &kp BACKSPACE
-&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D                 &kp H                         &kp N                &kp E         &kp I    &kp O          &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B                 &kp K                         &kp M                &kp COMMA     &kp DOT  &kp FSLH       &kp LCTRL
-                         &kp LGUI  &mo 1  &mt LEFT_ALT SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &hold_tap_layer 2 3  &kp LEFT_GUI
+&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G         &kp J                         &kp L                &kp U         &kp Y    &kp SEMICOLON  &kp BACKSPACE
+&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D         &kp H                         &kp N                &kp E         &kp I    &kp O          &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B         &kp K                         &kp M                &kp COMMA     &kp DOT  &kp FSLH       &kp LCTRL
+                         &kp LGUI  &mo 1  &space_tap    &mt LA(LC(LEFT_SHIFT)) ENTER  &hold_tap_layer 2 3  &kp LEFT_GUI
             >;
         };
 
@@ -95,8 +125,8 @@
             bindings = <
 &trans  &kp LS(N1)    &kp LS(N2)    &kp LS(N3)    &kp LS(N4)    &kp LS(N5)    &kp LS(N6)    &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7      &kp F10     &kp F11     &kp F12     &trans
-                                    &kp LGUI      &trans        &kp SPACE     &kp RET       &trans      &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F11     &kp COMMA   &kp PERIOD  &kp F12     &trans
+                                    &trans        &trans        &trans        &trans        &trans      &trans
             >;
         };
 
@@ -108,10 +138,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &trans     &kp RIGHT_BRACE        &kp LEFT_BRACE        &trans       &trans             &kp PLUS        &trans         &trans    &trans     &trans
-&trans  &trans  &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp LEFT_PARENTHESIS  &kp MINUS    &kp SINGLE_QUOTE   &kp LEFT_ARROW  &kp UP_ARROW   &kp DOWN  &kp RIGHT  &trans
-&trans  &trans  &trans     &kp RIGHT_BRACKET      &kp LEFT_BRACKET      &kp UNDER    &kp DOUBLE_QUOTES  &kp PIPE        &kp BACKSLASH  &trans    &trans     &trans
-                           &kp LGUI               &trans                &kp SPACE    &kp RET            &trans          &trans
+&trans  &trans  &trans     &kp RIGHT_BRACE        &kp LEFT_BRACE        &trans       &backtick       &kp PLUS        &trans        &trans    &trans         &trans
+&trans  &trans  &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp LEFT_PARENTHESIS  &kp MINUS    &single_quotes  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN  &kp RIGHT      &trans
+&trans  &trans  &trans     &kp RIGHT_BRACKET      &kp LEFT_BRACKET      &kp UNDER    &double_quotes  &kp PIPE        &trans        &trans    &kp BACKSLASH  &trans
+                           &trans                 &trans                &trans       &trans          &trans          &trans
             >;
         };
 
@@ -135,10 +165,10 @@
 
         games {
             bindings = <
-&trans  &kp Q  &kp W  &kp E   &kp R   &kp T        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A  &kp S  &kp D   &kp F   &kp G        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp C   &kp V   &kp B        &trans  &trans  &trans  &trans  &trans  &trans
-                      &trans  &trans  &kp SPACE    &trans  &none   &none
+&trans  &kp Q  &kp W  &kp E   &kp R   &kp T     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A  &kp S  &kp D   &kp F   &kp G     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp C   &kp V   &kp B     &trans  &trans  &trans  &trans  &trans  &trans
+                      &trans  &trans  &trans    &trans  &none   &none
             >;
         };
     };
