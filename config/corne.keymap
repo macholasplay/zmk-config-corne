@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SPACE_TAP";
             #binding-cells = <0>;
-            bindings = <&mt SPACE LEFT_ALT>, <&kp SPACE>;
+            bindings = <&mt LALT SPACE>, <&kp SPACE>;
         };
     };
 
