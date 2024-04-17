@@ -71,6 +71,8 @@
             label = "SPACE_TAP";
             #binding-cells = <0>;
             bindings = <&mt LALT SPACE>, <&kp SPACE>;
+
+            tapping-term-ms = <350>;
         };
     };
 
