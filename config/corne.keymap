@@ -65,15 +65,6 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
-
-        space_tap: space_tap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SPACE_TAP";
-            #binding-cells = <0>;
-            bindings = <&mt LALT SPACE>, <&kp SPACE>;
-
-            tapping-term-ms = <350>;
-        };
     };
 
     macros {
@@ -110,10 +101,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G         &kp J                         &kp L                &kp U         &kp Y    &kp SEMICOLON  &kp BACKSPACE
-&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D         &kp H                         &kp N                &kp E         &kp I    &kp O          &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B         &kp K                         &kp M                &kp COMMA     &kp DOT  &kp FSLH       &kp LCTRL
-                         &kp LGUI  &mo 1  &space_tap    &mt LA(LC(LEFT_SHIFT)) ENTER  &hold_tap_layer 2 3  &kp LEFT_GUI
+&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G             &kp J                         &kp L                &kp U         &kp Y    &kp SEMICOLON  &kp BACKSPACE
+&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D             &kp H                         &kp N                &kp E         &kp I    &kp O          &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B             &kp K                         &kp M                &kp COMMA     &kp DOT  &kp FSLH       &kp LCTRL
+                         &kp LGUI  &mo 1  &mt LALT SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &hold_tap_layer 2 3  &kp LEFT_GUI
             >;
         };
 
