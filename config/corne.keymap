@@ -147,10 +147,10 @@
 
         diacritics {
             bindings = <
-&trans  &trans  &trans            &trans         &trans          &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LS(NUMBER_6)  &kp LS(GRAVE)  &kp APOSTROPHE  &kp GRAVE    &trans  &trans  &trans  &trans  &trans  &trans
-&none   &trans  &trans            &trans         &trans          &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans         &trans          &trans       &trans  &trans  &trans
+&trans  &trans  &trans            &trans         &trans          &trans       &trans  &trans    &trans        &trans  &trans  &trans
+&trans  &trans  &kp LS(NUMBER_6)  &kp LS(GRAVE)  &kp APOSTROPHE  &kp GRAVE    &trans  &kp EXCL  &kp QUESTION  &trans  &trans  &trans
+&none   &trans  &trans            &trans         &trans          &trans       &trans  &trans    &trans        &trans  &trans  &trans
+                                  &trans         &trans          &trans       &trans  &trans    &trans
             >;
         };
 
