@@ -40,7 +40,7 @@
         };
 
         toggle_game_layer {
-            bindings = <&tog 5>;
+            bindings = <&tog 0>;
             key-positions = <0 11>;
         };
 
@@ -101,9 +101,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F     &kp P  &kp G             &kp J                         &kp L                &kp U         &kp Y    &kp SEMICOLON  &kp BACKSPACE
-&kp LSHFT  &kp A  &kp R  &kp S     &kp T  &kp D             &kp H                         &kp N                &kp E         &kp I    &kp O          &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B             &kp K                         &kp M                &kp COMMA     &kp DOT  &kp FSLH       &kp LCTRL
+&kp ESC    &kp Q  &kp W  &kp E     &kp R  &kp T             &kp Y                         &kp U                &kp I         &kp O    &kp P          &kp BACKSPACE
+&kp LSHFT  &kp A  &kp S  &kp D     &kp F  &kp G             &kp H                         &kp J                &kp K         &kp L    &kp SEMICOLON  &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B             &kp N                         &kp M                &kp COMMA     &kp DOT  &kp FSLH       &kp LCTRL
                          &kp LGUI  &mo 1  &mt LALT SPACE    &mt LA(LC(LEFT_SHIFT)) ENTER  &hold_tap_layer 2 3  &kp LEFT_GUI
             >;
         };
@@ -153,15 +153,6 @@
 &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp PAGE_UP    &kp PRINTSCREEN   &kp INSERT         &trans        &trans      &trans
 &trans          &trans        &trans        &trans        &trans        &trans          &kp PAGE_DOWN  &kp HOME          &kp END            &trans        &trans      &trans
                                             &trans        &trans        &trans          &trans         &trans            &trans
-            >;
-        };
-
-        games {
-            bindings = <
-&trans  &kp Q  &kp W  &kp E   &kp R   &kp T     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A  &kp S  &kp D   &kp F   &kp G     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp C   &kp V   &kp B     &trans  &trans  &trans  &trans  &trans  &trans
-                      &trans  &trans  &trans    &trans  &none   &none
             >;
         };
     };
