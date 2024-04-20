@@ -54,8 +54,18 @@
         };
 
         TOREVIT {
-            bindings = <&to 2>;
+            bindings = <&tog 2>;
             key-positions = <23 35>;
+        };
+
+        AAAAAA {
+            bindings = <&tog 0>;
+            key-positions = <11 35>;
+        };
+
+        AAAAAAAAAAAAAAAAAAAA {
+            bindings = <&tog 0>;
+            key-positions = <11 23>;
         };
     };
 
@@ -75,7 +85,7 @@
         WALL: REVIT1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>, <&macro_press>, <&kp W &kp A>;
+            bindings = <&none>, <&macro_tap>, <&kp W &kp A>;
 
             label = "REVIT1";
         };
