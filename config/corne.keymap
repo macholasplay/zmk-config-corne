@@ -29,7 +29,7 @@
         };
 
         TOREVIT {
-            bindings = <&tog 2>;
+            bindings = <&tog 3>;
             key-positions = <36 41>;
         };
 
@@ -39,8 +39,23 @@
         };
 
         numbermode {
-            bindings = <&tog 1>;
+            bindings = <&tog 2>;
             key-positions = <38 39>;
+        };
+
+        AGUDO {
+            bindings = <&kp APOS>;
+            key-positions = <12 10>;
+        };
+
+        CIRCUNFLEXO {
+            bindings = <&kp CARET>;
+            key-positions = <12 34>;
+        };
+
+        TIL {
+            bindings = <&kp TILDE>;
+            key-positions = <12 22>;
         };
     };
 
@@ -57,12 +72,88 @@
     };
 
     macros {
-        WALL: REVIT1 {
+        REVITWALL: REVIT1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>, <&macro_tap>, <&kp W &kp A>;
-
+            bindings = <&kp W &kp A>;
             label = "REVIT1";
+        };
+
+        REVITDOOR: REVITDOOR {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp R>;
+            label = "REVITDOOR";
+        };
+
+        REVITWINDOW: REVITWINDOW {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp N>;
+            label = "REVITWINDOW";
+        };
+
+        REVITPAINT: REVITPAINT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp T>;
+            label = "REVITPAINT";
+        };
+
+        REVITCOPYS: REVITCOPYS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp S>;
+            label = "REVITCOPYS";
+        };
+
+        REVITCOPY: REVITCOPY {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp C>;
+            label = "REVITCOPY";
+        };
+
+        REVITSLICE: REVITSLICE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp L>;
+            label = "REVITSLICE";
+        };
+
+        REVITSELPLAN: REVITSELPLAN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp K>;
+            label = "REVITSELPLAN";
+        };
+
+        REVITFLOOR: REVITFLOOR {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp L>;
+            label = "REVITFLOOR";
+        };
+
+        REVITCOMP: REVITCOMP {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp M>;
+            label = "REVITCOMP";
+        };
+
+        REVITDETAILLINE: REVITDETAILLINE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp L>;
+            label = "REVITDETAILLINE";
+        };
+
+        REVITDIMENSION: REVITDIMENSION {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp M>;
+            label = "REVITDIMENSION";
         };
     };
 
@@ -99,6 +190,15 @@
 &trans  &kp A   &kp S   &kp D   &trans            &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans            &trans       &trans  &trans  &trans  &trans  &trans  &trans
                         &kp G   &kp LEFT_CONTROL  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        REVIT {
+            bindings = <
+&kp ESC           &REVITWALL   &REVITDOOR     &REVITWINDOW  &REVITCOMP        &trans       &kp N7     &kp N8   &kp N9  &trans  &kp DEL  &kp BSPC
+&kp LEFT_SHIFT    &REVITPAINT  &REVITCOPYS    &REVITCOPY    &REVITDETAILLINE  &trans       &kp N4     &kp N5   &kp N6  &trans  &trans   &trans
+&kp LEFT_CONTROL  &REVITSLICE  &REVITSELPLAN  &REVITFLOOR   &REVITDIMENSION   &trans       &kp N1     &kp N2   &kp N3  &trans  &trans   &trans
+                                              &kp ENTER     &kp TAB           &kp SPACE    &kp ENTER  &kp DOT  &kp N0
             >;
         };
     };
