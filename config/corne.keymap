@@ -57,6 +57,11 @@
             bindings = <&kp TILDE>;
             key-positions = <12 22>;
         };
+
+        gamemode {
+            bindings = <&none>;
+            key-positions = <12 37>;
+        };
     };
 
     behaviors {
@@ -168,28 +173,28 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC           &kp Q  &kp W  &kp E     &kp R    &kp T             &kp Y      &kp U                &kp I           &kp O    &kp P                &kp BACKSPACE
-&kp LSHFT         &kp A  &kp S  &kp D     &kp F    &kp G             &kp H      &kp J                &kp K           &kp L    &mt SEMICOLON COLON  &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V    &kp B             &kp N      &kp M                &kp COMMA       &kp DOT  &kp FSLH             &kp CAPS
-                                &kp LGUI  &kp TAB  &mt LALT SPACE    &kp ENTER  &hold_tap_layer 1 0  &mt TILDE APOS
+&kp ESC           &kp Q  &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U         &kp I         &kp O    &kp P                &kp BACKSPACE
+&kp LSHFT         &kp A  &kp S  &kp D  &kp F    &kp G        &kp H      &kp J         &kp K         &kp L    &mt SEMICOLON COLON  &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M         &kp COMMA     &kp DOT  &kp FSLH             &kp CAPS
+                                &mo 1  &kp TAB  &kp SPACE    &kp ENTER  &kp LEFT_ALT  &kp LEFT_WIN
             >;
         };
 
         layer_6 {
             bindings = <
-&to 0   &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp UP_ARROW    &trans       &kp TILDE  &kp APOS      &trans        &kp N7  &kp N8  &kp N9
-&trans  &trans    &kp DELETE         &kp LEFT         &kp DOWN_ARROW  &kp RIGHT    &kp COMMA  &kp DOT       &trans        &kp N4  &kp N5  &kp N6
-&trans  &trans    &kp F1             &kp F2           &kp F3          &kp F4       &kp EXCL   &kp QUESTION  &trans        &kp N1  &kp N2  &kp N3
-                                     &trans           &trans          &kp SPACE    &kp ENTER  &trans        &kp NUMBER_0
+&to 0   &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp UP_ARROW    &trans       &kp AT_SIGN  &kp DOLLAR    &kp SEMI      &kp N7  &kp N8  &kp N9
+&trans  &trans    &kp DELETE         &kp LEFT         &kp DOWN_ARROW  &kp RIGHT    &kp COMMA    &kp DOT       &kp COLON     &kp N4  &kp N5  &kp N6
+&trans  &trans    &kp F1             &kp F2           &kp F3          &kp F4       &kp EXCL     &kp QUESTION  &trans        &kp N1  &kp N2  &kp N3
+                                     &trans           &trans          &kp SPACE    &kp ENTER    &trans        &kp NUMBER_0
             >;
         };
 
         gaming {
             bindings = <
-&trans  &trans  &kp W   &trans  &trans            &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A   &kp S   &kp D   &trans            &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp G   &kp LEFT_CONTROL  &kp SPACE    &trans  &trans  &trans
+&kp N2            &kp Q  &kp W  &kp E  &kp R             &kp N3       &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT    &kp A  &kp S  &kp D  &kp F             &kp N4       &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V             &kp N5       &trans  &trans  &trans  &trans  &trans  &trans
+                                &kp G  &kp LEFT_CONTROL  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
@@ -199,6 +204,15 @@
 &kp LEFT_SHIFT    &REVITPAINT  &REVITCOPYS    &REVITCOPY    &REVITDETAILLINE  &trans       &kp N4     &kp N5   &kp N6  &trans  &trans   &trans
 &kp LEFT_CONTROL  &REVITSLICE  &REVITSELPLAN  &REVITFLOOR   &REVITDIMENSION   &trans       &kp N1     &kp N2   &kp N3  &trans  &trans   &trans
                                               &kp ENTER     &kp TAB           &kp SPACE    &kp ENTER  &kp DOT  &kp N0
+            >;
+        };
+
+        programing {
+            bindings = <
+&kp Q  &kp W  &kp E  &kp R  &kp T         &kp Y     &kp U          &kp I                                   &kp O     &kp P  &kp GRAVE  &kp FSLH
+&kp A  &kp S  &kp D  &kp F  &kp G         &kp H     &kp J          &kp K                                   &kp L     &kp M  &kp COMMA  &kp DOT
+&kp Z  &kp X  &kp C  &kp V  &kp B         &kp N     &kp LBKT       &mt LEFT_PARENTHESIS RIGHT_PARENTHESIS  &kp DOT   &kp K  &kp N4     &kp DOT
+                     &kp K  &kp LS(EXCL)  &kp N1    &kp LS(QMARK)  &kp FSLH                                &kp DOWN
             >;
         };
     };
